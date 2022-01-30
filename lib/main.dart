@@ -52,7 +52,23 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             BlocConsumer<CounterCubit, CounterState>(
               listener: (context, state) {
-                // ScaffoldMessenger(child: child)
+                if (state.wasIncremented == true) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text('Incremented'),
+                      backgroundColor: Colors.green,
+                      duration: Duration(milliseconds: 300),
+                    ),
+                  );
+                } else {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text('Decremented'),
+                      backgroundColor: Colors.red,
+                      duration: Duration(milliseconds: 300),
+                    ),
+                  );
+                }
               },
               builder: (context, state) {
                 return BlocBuilder<CounterCubit, CounterState>(
