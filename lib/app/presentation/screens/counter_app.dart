@@ -1,5 +1,7 @@
+import 'package:bloc_practice/app/constants/enums.dart';
 import 'package:bloc_practice/app/logic/cubit/counter_cubit.dart';
 import 'package:bloc_practice/app/logic/cubit/counter_state.dart';
+import 'package:bloc_practice/app/logic/cubit/internet_cubit.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -15,6 +17,21 @@ class CounterApp extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            BlocBuilder<InternetCubit, InternetState>(
+              builder: (context, state) {
+                if (state is InternetConnected &&
+                    state.connectionType == ConnectionType.wifi) {
+                  return const Text('WIFI');
+                } else if (state is InternetConnected &&
+                    state.connectionType == ConnectionType.mobile) {
+                  return const Text('MOBILE');
+                } else if (state is InternetDisconnected) {
+                  return const Text('DISCONNECTED');
+                } else {
+                  return const CircularProgressIndicator();
+                }
+              },
+            ),
             BlocConsumer<CounterCubit, CounterState>(
               listener: (context, state) {
                 if (state.wasIncremented == true) {
