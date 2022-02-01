@@ -22,6 +22,14 @@ class CounterApp extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           title: const Text('Bloc Counter App'),
+          actions: [
+            IconButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/settings');
+              },
+              icon: const Icon(Icons.settings),
+            ),
+          ],
         ),
         body: Center(
           child: Column(
