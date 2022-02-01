@@ -1,4 +1,5 @@
-import 'package:bloc_practice/screens/counter_app.dart';
+import 'package:bloc_practice/app/presentation/screens/counter_app.dart';
+
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -16,8 +17,7 @@ class HomePage extends StatelessWidget {
           children: [
             ElevatedButton(
               onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => CounterApp()));
+                Navigator.of(context).pushNamed('/counter');
               },
               child: const Text('Counter App'),
             ),

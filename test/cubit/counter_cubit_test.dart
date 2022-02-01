@@ -1,5 +1,6 @@
-import 'package:bloc_practice/cubit/counter_cubit.dart';
-import 'package:bloc_practice/cubit/counter_state.dart';
+import 'package:bloc_practice/app/logic/cubit/counter_cubit.dart';
+import 'package:bloc_practice/app/logic/cubit/counter_state.dart';
+
 import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_test/flutter_test.dart';
 

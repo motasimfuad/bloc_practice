@@ -1,5 +1,6 @@
-import 'package:bloc_practice/cubit/counter_cubit.dart';
-import 'package:bloc_practice/cubit/counter_state.dart';
+import 'package:bloc_practice/app/logic/cubit/counter_cubit.dart';
+import 'package:bloc_practice/app/logic/cubit/counter_state.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -73,7 +74,14 @@ class CounterApp extends StatelessWidget {
                   ),
                 ),
               ],
-            )
+            ),
+            const SizedBox(height: 30),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).pushNamed('/counter_second');
+              },
+              child: const Text('Second page'),
+            ),
           ],
         ),
       ),
