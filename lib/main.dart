@@ -1,12 +1,13 @@
-import 'package:bloc_practice/app/logic/cubit/internet_cubit.dart';
-import 'package:bloc_practice/app/logic/cubit/settings_cubit.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:bloc_practice/app/logic/cubit/counter_cubit.dart';
-import 'package:bloc_practice/app/presentation/router/app_router.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:path_provider/path_provider.dart';
+
+import 'app/logic/cubit/counter_cubit.dart';
+import 'app/logic/cubit/internet_cubit.dart';
+import 'app/logic/cubit/settings_cubit.dart';
+import 'app/presentation/router/app_router.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

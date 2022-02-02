@@ -1,7 +1,8 @@
-import 'package:bloc_practice/app/logic/cubit/settings_cubit.dart';
-import 'package:bloc_practice/app/logic/cubit/settings_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../logic/cubit/settings_cubit.dart';
+import '../../logic/cubit/settings_state.dart';
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({Key? key}) : super(key: key);
